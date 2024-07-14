@@ -1046,20 +1046,12 @@ video {
   padding-top: 6rem;
 }
 
-.pt-36 {
-  padding-top: 9rem;
-}
-
-.pt-52 {
-  padding-top: 13rem;
-}
-
-.pt-40 {
-  padding-top: 10rem;
-}
-
 .pt-32 {
   padding-top: 8rem;
+}
+
+.pt-36 {
+  padding-top: 9rem;
 }
 
 .text-center {
