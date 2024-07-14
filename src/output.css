@@ -743,6 +743,14 @@ video {
   margin-top: 5px;
 }
 
+.mt-\[1px\] {
+  margin-top: 1px;
+}
+
+.mt-\[px\] {
+  margin-top: px;
+}
+
 .block {
   display: block;
 }
@@ -1381,6 +1389,11 @@ body {
 .dark\:shadow-slate-500:is(.dark *) {
   --tw-shadow-color: #64748b;
   --tw-shadow: var(--tw-shadow-colored);
+}
+
+.dark\:invert:is(.dark *) {
+  --tw-invert: invert(100%);
+  filter: var(--tw-blur) var(--tw-brightness) var(--tw-contrast) var(--tw-grayscale) var(--tw-hue-rotate) var(--tw-invert) var(--tw-saturate) var(--tw-sepia) var(--tw-drop-shadow);
 }
 
 .dark\:hover\:text-primary:hover:is(.dark *) {
