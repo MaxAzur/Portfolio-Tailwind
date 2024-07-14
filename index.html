@@ -1,5 +1,5 @@
-<!DOCTYPE html>
-<html lang="en">
+<!doctype html>
+<html lang="en" class="scroll-smooth">
   <head>
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
@@ -13,8 +13,19 @@
     <!-- <script src="https://cdn.tailwindcss.com"></script> -->
     <title>Portofolio Tailwind CSS</title>
     <link rel="stylesheet" href="src/output.css" />
+    <script>
+      if (
+        localStorage.theme === "dark" ||
+        (!("theme" in localStorage) &&
+          window.matchMedia("(prefers-color-scheme: dark)").matches)
+      ) {
+        document.documentElement.classList.add("dark");
+      } else {
+        document.documentElement.classList.remove("dark");
+      }
+    </script>
   </head>
-  <body class="scroll-smooth">
+  <body>
     <!-- Header Start -->
     <header
       class="bg-transparent absolute top-0 left-0 w-full flex items-center z-10"
@@ -23,7 +34,7 @@
         <div class="flex items-center justify-between relative">
           <div class="px-4">
             <a href="#home" class="font-bold text-lg text-primary block py-6"
-              >Raffi Pratama</a
+              >Maxut</a
             >
           </div>
           <div class="flex items-center px-4">
@@ -46,50 +57,86 @@
 
             <nav
               id="nav-menu"
-              class="hidden absolute py-5 bg-white shadow-lg rounded-lg max-w-[250px] w-full right-4 top-full lg:block lg:static lg:bg-transparent lg:max-w-full lg:shadow-none lg:rounded-none"
+              class="hidden absolute py-5 bg-white shadow-lg rounded-lg max-w-[250px] w-full right-4 top-full lg:block lg:static lg:bg-transparent lg:max-w-full lg:shadow-none lg:rounded-none dark:bg-dark dark:shadow-slate-500 lg:dark:bg-transparent"
             >
               <ul class="block lg:flex transition duration-500 ease-out">
                 <li class="group">
                   <a
                     href="#home"
-                    class="text-bae text-dark mx-8 flex py-2 group-hover:text-primary"
+                    class="text-bae text-dark mx-8 flex py-2 group-hover:text-primary dark:text-white transition duration-500"
                     >Beranda</a
                   >
                 </li>
                 <li class="group">
                   <a
                     href="#about"
-                    class="text-bae text-dark mx-8 flex py-2 group-hover:text-primary"
+                    class="text-bae text-dark mx-8 flex py-2 group-hover:text-primary dark:text-white transition duration-500"
                     >Tentang Saya</a
                   >
                 </li>
                 <li class="group">
                   <a
                     href="#portfolio"
-                    class="text-bae text-dark mx-8 flex py-2 group-hover:text-primary"
+                    class="text-bae text-dark mx-8 flex py-2 group-hover:text-primary dark:text-white transition duration-500"
                     >Portfolio</a
                   >
                 </li>
                 <li class="group">
                   <a
                     href="#clients"
-                    class="text-bae text-dark mx-8 flex py-2 group-hover:text-primary"
+                    class="text-bae text-dark mx-8 flex py-2 group-hover:text-primary dark:text-white transition duration-500"
                     >Clients</a
                   >
                 </li>
                 <li class="group">
                   <a
                     href="#blog"
-                    class="text-bae text-dark mx-8 flex py-2 group-hover:text-primary"
+                    class="text-bae text-dark mx-8 flex py-2 group-hover:text-primary dark:text-white transition duration-500"
                     >Blog</a
                   >
                 </li>
                 <li class="group">
                   <a
                     href="#contact"
-                    class="text-bae text-dark mx-8 flex py-2 group-hover:text-primary"
+                    class="text-bae text-dark mx-8 flex py-2 group-hover:text-primary dark:text-white transition duration-500"
                     >Contact</a
                   >
+                </li>
+                <li class="flex items-center pl-8 mt-3 lg:mt-0">
+                  <div class="flex">
+                    <span class="mr-[6px] text-xs text-slate-500"
+                      ><svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        x="0px"
+                        y="0px"
+                        width="30"
+                        height="30"
+                        viewBox="0 0 50 50"
+                        class=""
+                      >
+                        <path
+                          d="M 24.90625 3.96875 C 24.863281 3.976563 24.820313 3.988281 24.78125 4 C 24.316406 4.105469 23.988281 4.523438 24 5 L 24 11 C 23.996094 11.359375 24.183594 11.695313 24.496094 11.878906 C 24.808594 12.058594 25.191406 12.058594 25.503906 11.878906 C 25.816406 11.695313 26.003906 11.359375 26 11 L 26 5 C 26.011719 4.710938 25.894531 4.433594 25.6875 4.238281 C 25.476563 4.039063 25.191406 3.941406 24.90625 3.96875 Z M 10.65625 9.84375 C 10.28125 9.910156 9.980469 10.183594 9.875 10.546875 C 9.769531 10.914063 9.878906 11.304688 10.15625 11.5625 L 14.40625 15.8125 C 14.648438 16.109375 15.035156 16.246094 15.410156 16.160156 C 15.78125 16.074219 16.074219 15.78125 16.160156 15.410156 C 16.246094 15.035156 16.109375 14.648438 15.8125 14.40625 L 11.5625 10.15625 C 11.355469 9.933594 11.054688 9.820313 10.75 9.84375 C 10.71875 9.84375 10.6875 9.84375 10.65625 9.84375 Z M 39.03125 9.84375 C 38.804688 9.875 38.59375 9.988281 38.4375 10.15625 L 34.1875 14.40625 C 33.890625 14.648438 33.753906 15.035156 33.839844 15.410156 C 33.925781 15.78125 34.21875 16.074219 34.589844 16.160156 C 34.964844 16.246094 35.351563 16.109375 35.59375 15.8125 L 39.84375 11.5625 C 40.15625 11.265625 40.246094 10.800781 40.0625 10.410156 C 39.875 10.015625 39.460938 9.789063 39.03125 9.84375 Z M 24.90625 15 C 24.875 15.007813 24.84375 15.019531 24.8125 15.03125 C 24.75 15.035156 24.6875 15.046875 24.625 15.0625 C 24.613281 15.074219 24.605469 15.082031 24.59375 15.09375 C 19.289063 15.320313 15 19.640625 15 25 C 15 30.503906 19.496094 35 25 35 C 30.503906 35 35 30.503906 35 25 C 35 19.660156 30.746094 15.355469 25.46875 15.09375 C 25.433594 15.09375 25.410156 15.0625 25.375 15.0625 C 25.273438 15.023438 25.167969 15.003906 25.0625 15 C 25.042969 15 25.019531 15 25 15 C 24.96875 15 24.9375 15 24.90625 15 Z M 24.9375 17 C 24.957031 17 24.980469 17 25 17 C 25.03125 17 25.0625 17 25.09375 17 C 29.46875 17.050781 33 20.613281 33 25 C 33 29.421875 29.421875 33 25 33 C 20.582031 33 17 29.421875 17 25 C 17 20.601563 20.546875 17.035156 24.9375 17 Z M 4.71875 24 C 4.167969 24.078125 3.78125 24.589844 3.859375 25.140625 C 3.9375 25.691406 4.449219 26.078125 5 26 L 11 26 C 11.359375 26.003906 11.695313 25.816406 11.878906 25.503906 C 12.058594 25.191406 12.058594 24.808594 11.878906 24.496094 C 11.695313 24.183594 11.359375 23.996094 11 24 L 5 24 C 4.96875 24 4.9375 24 4.90625 24 C 4.875 24 4.84375 24 4.8125 24 C 4.78125 24 4.75 24 4.71875 24 Z M 38.71875 24 C 38.167969 24.078125 37.78125 24.589844 37.859375 25.140625 C 37.9375 25.691406 38.449219 26.078125 39 26 L 45 26 C 45.359375 26.003906 45.695313 25.816406 45.878906 25.503906 C 46.058594 25.191406 46.058594 24.808594 45.878906 24.496094 C 45.695313 24.183594 45.359375 23.996094 45 24 L 39 24 C 38.96875 24 38.9375 24 38.90625 24 C 38.875 24 38.84375 24 38.8125 24 C 38.78125 24 38.75 24 38.71875 24 Z M 15 33.875 C 14.773438 33.90625 14.5625 34.019531 14.40625 34.1875 L 10.15625 38.4375 C 9.859375 38.679688 9.722656 39.066406 9.808594 39.441406 C 9.894531 39.8125 10.1875 40.105469 10.558594 40.191406 C 10.933594 40.277344 11.320313 40.140625 11.5625 39.84375 L 15.8125 35.59375 C 16.109375 35.308594 16.199219 34.867188 16.039063 34.488281 C 15.882813 34.109375 15.503906 33.867188 15.09375 33.875 C 15.0625 33.875 15.03125 33.875 15 33.875 Z M 34.6875 33.875 C 34.3125 33.941406 34.011719 34.214844 33.90625 34.578125 C 33.800781 34.945313 33.910156 35.335938 34.1875 35.59375 L 38.4375 39.84375 C 38.679688 40.140625 39.066406 40.277344 39.441406 40.191406 C 39.8125 40.105469 40.105469 39.8125 40.191406 39.441406 C 40.277344 39.066406 40.140625 38.679688 39.84375 38.4375 L 35.59375 34.1875 C 35.40625 33.988281 35.148438 33.878906 34.875 33.875 C 34.84375 33.875 34.8125 33.875 34.78125 33.875 C 34.75 33.875 34.71875 33.875 34.6875 33.875 Z M 24.90625 37.96875 C 24.863281 37.976563 24.820313 37.988281 24.78125 38 C 24.316406 38.105469 23.988281 38.523438 24 39 L 24 45 C 23.996094 45.359375 24.183594 45.695313 24.496094 45.878906 C 24.808594 46.058594 25.191406 46.058594 25.503906 45.878906 C 25.816406 45.695313 26.003906 45.359375 26 45 L 26 39 C 26.011719 38.710938 25.894531 38.433594 25.6875 38.238281 C 25.476563 38.039063 25.191406 37.941406 24.90625 37.96875 Z"
+                        ></path></svg
+                    ></span>
+                    <input type="checkbox" class="hidden" id="dark-toggle" />
+                    <label for="dark-toggle">
+                      <div
+                        class="flex h-5 w-9 cursor-pointer items-center rounded-full bg-slate-500 p-1 mt-[5px] dark:bg-white transition duration-200"
+                      >
+                        <div
+                          class="toggle-circle h-4 w-4 rounded-full bg-white transition duration-300 ease-in-out dark:bg-dark"
+                        ></div>
+                      </div>
+                    </label>
+                    <span class="ml-2 text-xs text-slate-500"
+                      ><img
+                        width="24"
+                        height="24"
+                        src="\./src/img/item/moon.png"
+                        alt="full-moon"
+                        class="mt-[2px] dark:"
+                    /></span>
+                  </div>
                 </li>
               </ul>
             </nav>
@@ -100,44 +147,52 @@
     <!-- Header End -->
 
     <!-- Hero Section Start -->
-    <section id="home" class="pt-36">
+    <section id="home" class="pt-52 dark:bg-dark">
       <div class="container">
         <div class="flex flex-wrap">
-          <div class="w-full slef-center px-4 lg:w-1/2">
+          <div class="w-full slef-center px-10 lg:w-1/2">
             <h1 class="text-base font-semibold text-primary md:text-xl">
-              Halo Semua 🙌, saya
-              <span class="block font-bold text-dark text-4xl mt-1 lg:text-5xl"
-                >Raffi Pratama</span
+              Halo Semua 👋, saya
+              <span
+                class="block font-bold text-dark text-4xl mt-1 lg:text-5xl dark:text-white"
+                >Maxut</span
               >
             </h1>
             <h2 class="font-medium text-secondary text-lg mb-5 lg:text-2xl">
-              Programmer & <span class="text-dark">Freelancer</span>
+              Web Developer &
+              <span class="text-dark dark:text-white">Freelancer</span>
             </h2>
             <p class="font-medium text-secondary mb-10 leading-relaxed">
-              Belajar web programming itu mudah dan menyenangkan bukan,
-              <span class="text-dark font-bold">bukan!</span>
+              Belajar programming untuk mengejar Xaviera.
+              <span class="text-dark font-bold dark:text-white">💌</span>
             </p>
 
-            <a
-              href="#"
-              class="text-base font-semibold text-white bg-primary py-3 px-8 rounded-full hover:shadow-lg hover:opcacity-80 transition duration-300 ease-in-out"
-              >Hubungi Saya</a
-            >
+            <button class="cursor-pointer">
+              <a
+                href="#contact"
+                class="text-base font-semibold text-white bg-primary py-3 px-8 rounded-full hover:shadow-lg hover:opcacity-80 transition duration-300 ease-in-out"
+                >Hubungi Saya</a
+              >
+            </button>
           </div>
-          <div class="w-full self-end px-4 lg:w-1/2">
+          <div class="w-full self-end px-4 lg:w-1/2 mb-40">
             <div class="mt-10 relative lg:mt-0 lg:mr-0">
-              <img src="src/img/1.png" alt="Raffi" class="max-w-full mx-auto" />
+              <img
+                src="src/img/2.png"
+                alt="Maxut"
+                class="max-w-full mx-auto relative z-10"
+              />
               <span
-                class="absolute -bottom-0 -z-10 left-1/2 -translate-x-1/2 mt-96 md:scale-150"
+                class="absolute -bottom-0 left-1/2 -translate-x-1/2 mt-[400px] md:scale-140"
               >
                 <svg
-                  width="400"
-                  height="400"
+                  width="300"
+                  height="280"
                   viewBox="0 0 200 200"
                   xmlns="http://www.w3.org/2000/svg"
                 >
                   <path
-                    fill="#14b8a6"
+                    fill="#65fe08"
                     d="M43.2,-16.5C49.5,5.5,43.8,28.9,25.6,44.3C7.5,59.6,-23.2,66.8,-39.5,54.8C-55.8,42.9,-57.9,11.7,-48.9,-13.9C-40,-39.5,-20,-59.5,-0.8,-59.2C18.4,-59,36.8,-38.5,43.2,-16.5Z"
                     transform="translate(100 100) scale(1.1)"
                   />
@@ -151,37 +206,45 @@
     <!-- Hero Section End -->
 
     <!-- About Section Start -->
-    <section id="about" class="pt-36 pb-32">
+    <section id="about" class="pt-36 pb-32 dark:bg-dark">
       <div class="container">
         <div class="flex flex-wrap">
           <div class="w-full px-4 mb-10 lg:w-1/2">
             <h4 class="font-bold uppercase text-primary text-lg mb-3">
               Tentang Saya
             </h4>
-            <h2 class="font-bold text-dark text-3xl mb-5 max-w-md lg:text-4xl">
-              Yuk, Belajar web proggramming di WPU!
+            <h2
+              class="font-bold text-dark text-3xl mb-5 max-w-md lg:text-4xl dark:text-white"
+            >
+              Web Developer
             </h2>
             <p class="font-medium text-base text-secondary max-w-xl lg:text-lg">
-              Lorem ipsum dolor, sit amet consectetur adipisicing elit.
-              Necessitatibus officia animi consequatur culpa fuga. Amet, illum.
+              Saya maxut adalah seorang anak muda yang ingin menjadi seorang web
+              developer. Disini sebelum saya menempuh pendidikan untuk menjadi
+              seorang programmer saya akan mempersiapkan diri dengan belajar
+              terlebih dahulu mulai dari Html, Css, Js TailwindCSS. Setelah saya
+              paham tentang penggunaan Html, Css, Js dan TailwindCSS lanjut saya
+              akan belajar framework lain dalam dunia web programming.
             </p>
           </div>
           <div class="w-full px-4 lg:w-1/2">
             <h3
-              class="font-semibold text-dark text-2xl mb-4 lg:text-3xl lg:pt-10"
+              class="font-semibold text-dark text-2xl mb-4 lg:text-3xl lg:pt-10 dark:text-white"
             >
               Mari berteman
             </h3>
             <p class="font-medium text-base text-secondary mb-6 lg:text-lg">
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Dicta
-              esse vitae ex ipsa odio iure, praesentium architecto cum.
+              Saya sangat menyukai dunia programming karena di dunia programming
+              saya dapat mengetahui banyak sekali tentang seseorang yang
+              menciptakan sesuatu. Selain itu programming juga bisa memperbanyak
+              relasi antar seseorang.
             </p>
             <div class="flex items-center">
               <!-- youtube -->
               <a
-                href="https://youtube.com/Box404"
+                href="https://youtube.com/@zexzor44"
                 target="_blank"
-                class="w-9 h-9 mr-3 rounded-full flex justify-center items-center border border-slate-300 text-slate-300 hover:border-primary hover:bg-primary hover:text-white"
+                class="w-9 h-9 mr-3 rounded-full flex justify-center items-center border border-slate-300 text-slate-300 hover:border-primary hover:bg-primary hover:text-white transition duration-500"
               >
                 <svg
                   role="img"
@@ -200,7 +263,7 @@
               <a
                 href="https://instagram.com/zexzor._"
                 target="_blank"
-                class="w-9 h-9 mr-3 rounded-full flex justify-center items-center border border-slate-300 text-slate-300 hover:border-primary hover:bg-primary hover:text-white"
+                class="w-9 h-9 mr-3 rounded-full flex justify-center items-center border border-slate-300 text-slate-300 hover:border-primary hover:bg-primary hover:text-white transition duration-500"
               >
                 <svg
                   role="img"
@@ -217,9 +280,9 @@
               </a>
               <!-- Twitter -->
               <a
-                href="https://twitter.com/@Yantooh01"
+                href="https://twitter.com/@ShyCloudzz"
                 target="_blank"
-                class="w-9 h-9 mr-3 rounded-full flex justify-center items-center border border-slate-300 text-slate-300 hover:border-primary hover:bg-primary hover:text-white"
+                class="w-9 h-9 mr-3 rounded-full flex justify-center items-center border border-slate-300 text-slate-300 hover:border-primary hover:bg-primary hover:text-white transition duration-500"
               >
                 <svg
                   role="img"
@@ -236,9 +299,9 @@
               </a>
               <!-- TikTok -->
               <a
-                href="https://twitter.com/Yantooh01"
+                href="https://tiktok.com/@secrezto"
                 target="_blank"
-                class="w-9 h-9 mr-3 rounded-full flex justify-center items-center border border-slate-300 text-slate-300 hover:border-primary hover:bg-primary hover:text-white"
+                class="w-9 h-9 mr-3 rounded-full flex justify-center items-center border border-slate-300 text-slate-300 hover:border-primary hover:bg-primary hover:text-white transition duration-500"
               >
                 <svg
                   role="img"
@@ -255,7 +318,7 @@
               </a>
               <!-- Github -->
               <a
-                href="https://github.com/MaxuT"
+                href="https://github.com/MaxAzur"
                 target="_blank"
                 class="w-9 h-9 mr-3 rounded-full flex justify-center items-center border border-slate-300 text-slate-300 hover:border-primary hover:bg-primary hover:text-white"
               >
@@ -280,20 +343,18 @@
     <!-- About Section End -->
 
     <!-- Portfolio Section Start -->
-    <section id="portfolio" class="pt-36 pb-16 bg-slate-100">
+    <section id="portfolio" class="pt-36 pb-16 bg-slate-100 dark:bg-slate-800">
       <div class="container">
         <div class="w-full px-4">
           <div class="max-w-xl mx-auto text-center mt-16">
             <h4 class="font-semibold text-lg text-primary mb-2">Portfolio</h4>
             <h2
-              class="font-bold text-dark text-3xl mb-4 sm:text-4xl lg:text-5xl"
+              class="font-bold text-dark text-3xl mb-4 sm:text-4xl lg:text-5xl dark:text-white"
             >
-              Project Terbaru
+              Project Saya
             </h2>
             <p class="font-medium text-md text-secondary md:text-lg">
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Quam
-              maiores perferendis deserunt id laborum doloremque veniam dolorem
-              labore totam aperiam?
+              Ini adalah beberapa project yang pernah saya buat.
             </p>
           </div>
         </div>
@@ -304,65 +365,69 @@
           <div class="mb-12 p-4 md:w-1/2">
             <div class="rounded-md shadow-md overflow-hidden">
               <img
-                src="src/img/portfolio/1.png"
-                alt="Landing Page"
+                src="src/img/portfolio/port.png"
+                alt="Portfolio"
                 width="w-full"
               />
             </div>
-            <h3 class="font-semibold text-xl text-dark mt-5 mb-3">
-              Raffi Pratama Landing Page
+            <h3
+              class="font-semibold text-xl text-dark mt-5 mb-3 dark:text-white"
+            >
+              Maxut Portfolio
             </h3>
             <p class="font-medium text-base text-secondary">
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Minima
-              ipsum fugit esse!
+              Web portfolio pertama saya, menggunakan HTML, CSS, dan Bootstrap.
             </p>
           </div>
           <div class="mb-12 p-4 md:w-1/2">
             <div class="rounded-md shadow-md overflow-hidden">
               <img
-                src="src/img/portfolio/2.jpg"
+                src="src/img/portfolio/landing.png"
                 alt="Landing Page"
                 width="w-full"
               />
             </div>
-            <h3 class="font-semibold text-xl text-dark mt-5 mb-3">
-              Raffi Pratama Landing Page
+            <h3
+              class="font-semibold text-xl text-dark mt-5 mb-3 dark:text-white"
+            >
+              Maxut Landing Page
             </h3>
             <p class="font-medium text-base text-secondary">
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Minima
-              ipsum fugit esse!
+              Landing page sederhana, menggunakan HTML, CSS, dan Javascript.
             </p>
           </div>
           <div class="mb-12 p-4 md:w-1/2">
             <div class="rounded-md shadow-md overflow-hidden">
               <img
-                src="src/img/portfolio/3.png"
-                alt="Landing Page"
+                src="src/img/portfolio/linktree.png"
+                alt="Linktree Page"
                 width="w-full"
               />
             </div>
-            <h3 class="font-semibold text-xl text-dark mt-5 mb-3">
-              Raffi Pratama Landing Page
+            <h3
+              class="font-semibold text-xl text-dark mt-5 mb-3 dark:text-white"
+            >
+              Maxut Linktree
             </h3>
             <p class="font-medium text-base text-secondary">
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Minima
-              ipsum fugit esse!
+              Linktree yang saya buat menggunakan HTML, CSS, dan AnimateCSS.
             </p>
           </div>
           <div class="mb-12 p-4 md:w-1/2">
             <div class="rounded-md shadow-md overflow-hidden">
               <img
-                src="src/img/portfolio/4.jpg"
-                alt="Landing Page"
+                src="src/img/portfolio/shop.png"
+                alt="Warung"
                 width="w-full"
               />
             </div>
-            <h3 class="font-semibold text-xl text-dark mt-5 mb-3">
-              Raffi Pratama Landing Page
+            <h3
+              class="font-semibold text-xl text-dark mt-5 mb-3 dark:text-white"
+            >
+              Maxut Shop
             </h3>
             <p class="font-medium text-base text-secondary">
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Minima
-              ipsum fugit esse!
+              Web warung makan sederhana dengan HTML, CSS, dan Bootstrap.
             </p>
           </div>
         </div>
@@ -371,19 +436,18 @@
     <!-- Portfolio Section End -->
 
     <!-- Clients Section Start -->
-    <section id="clients" class="pt-36 pb-32 bg-slate-800">
+    <section id="clients" class="pt-36 pb-32 bg-slate-800 dark:bg-slate-700">
       <div class="container">
         <div class="w-full px-4">
           <div class="mx-auto text-center mb-16">
             <h4 class="font-semibold text-lg text-primary mb-2">Clients</h4>
             <h2
-              class="font-bold text-white text-3xl mb-4 sm:text-4xl lg:text-5xl"
+              class="font-bold text-white text-3xl mb-4 sm:text-4xl lg:text-5xl dark:text-white"
             >
-              Yang Pernah Bekerjasama
+              Pernah Bekerjasama
             </h2>
             <p class="font-medium text-md text-secondary md:text-lg">
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Quasi
-              voluptas suscipit saepe?
+              Brand-brand atau Company yang pernah bekerja sama.
             </p>
           </div>
         </div>
@@ -421,88 +485,104 @@
     <!-- Clients Section End -->
 
     <!-- Blog Section Start -->
-    <section id="blog" class="pt-36 pb-32 bg-slate-100">
+    <section id="blog" class="pt-36 pb-32 bg-slate-100 dark:bg-dark">
       <div class="container">
         <div class="w-full px-4">
           <div class="max-w-xl mx-auto text-center mb-16">
             <h4 class="font-semibold text-lg text-primary mb-2">Blog</h4>
             <h2
-              class="font-bold text-dark text-3xl mb-4 sm:text-4xl lg:text-5xl"
+              class="font-bold text-dark text-3xl mb-4 sm:text-4xl lg:text-5xl dark:text-white"
             >
               Tulisan Terkini
             </h2>
             <p class="font-medium text-md text-secondary md:text-lg">
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Hic ea
-              veniam deserunt iste?
+              Food ~ Travel ~ Tech ~ Lifestyle
             </p>
           </div>
         </div>
 
         <div class="flex flex-wrap">
           <div class="w-full px-4 lg:w-1/2 xl:w-1/3">
-            <div class="bg-white rounded-xl shadow-lg overflow-hidden mb-10">
-              <img src="src/img/portfolio/1.png" alt="bruh" class="w-full" />
+            <div
+              class="bg-white rounded-xl shadow-lg overflow-hidden mb-10 dark:bg-slate-800"
+            >
+              <img src="src/img/blog/bali.png" alt="bruh" class="w-full" />
               <div class="py-8 px-6">
                 <h3>
                   <a
                     href="#"
-                    class="block mb-3 font-semibold text-xl text-dark hover:text-primary truncate"
-                    >Tips Belajar Proggramming</a
+                    class="block mb-3 font-semibold text-xl text-dark hover:text-primary truncate dark:text-white dark:hover:text-primary transition duration-500"
+                    >THE BEST LUXURY HOTELS IN SANUR, BALI!</a
                   >
                 </h3>
                 <p class="font-medium text-secondary text-base mb-6">
-                  Lorem ipsum dolor sit amet consectetur, adipisicing elit. Sit,
-                  praesentium!
+                  Jauh sebelum Seminyak dan Canggu jadi hotspot di Bali, bahkan
+                  sebelum Nusa Dua berdiri kompleks resor mewah, Sanur merupakan
+                  tempat lahirnya pariwisata di Bali pada 1920-an. Hanya
+                  setengah jam berkendara dari Bandara Ngurah Rai, Pantai...
                 </p>
                 <a
                   href="#"
-                  class="font-medium text-sm text-white bg-primary py-2 px-4 rounded-lg hover:opacity-80"
+                  class="font-medium text-sm text-white bg-primary py-2 px-4 rounded-lg hover:opacity-80 transition duration-500"
                   >Baca Selengkapnya</a
                 >
               </div>
             </div>
           </div>
           <div class="w-full px-4 lg:w-1/2 xl:w-1/3">
-            <div class="bg-white rounded-xl shadow-lg overflow-hidden mb-10">
-              <img src="src/img/portfolio/1.png" alt="bruh" class="w-full" />
+            <div
+              class="bg-white rounded-xl shadow-lg overflow-hidden mb-10 dark:bg-slate-800"
+            >
+              <img src="src/img/blog/tokyo.jpg" alt="bruh" class="w-full" />
               <div class="py-8 px-6">
                 <h3>
                   <a
                     href="#"
-                    class="block mb-3 font-semibold text-xl text-dark hover:text-primary truncate"
-                    >Review Laravel</a
+                    class="block mb-3 font-semibold text-xl text-dark hover:text-primary truncate dark:text-white dark:hover:text-primary transition duration-500"
+                    >TOKYO SKYTREE, MENARA TERTINGGI DI DUNIA!</a
                   >
                 </h3>
                 <p class="font-medium text-secondary text-base mb-6">
-                  Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                  Nostrum magni mollitia molestias quos dolore.
+                  Tokyo Skytree merupakan menara tertinggi di dunia dengan
+                  ketinggian 634 meter dan juga merupakan struktur bangunan
+                  tertinggi di Jepang. Diresmikan pada 2012, menara ini
+                  digunakan utamanya untuk siaran digital terestrial TV dan
+                  radio...
                 </p>
                 <a
                   href="#"
-                  class="font-medium text-sm text-white bg-primary py-2 px-4 rounded-lg hover:opacity-80"
+                  class="font-medium text-sm text-white bg-primary py-2 px-4 rounded-lg hover:opacity-80 transition duration-500"
                   >Baca Selengkapnya</a
                 >
               </div>
             </div>
           </div>
           <div class="w-full px-4 lg:w-1/2 xl:w-1/3">
-            <div class="bg-white rounded-xl shadow-lg overflow-hidden mb-10">
-              <img src="src/img/portfolio/1.png" alt="bruh" class="w-full" />
+            <div
+              class="bg-white rounded-xl shadow-lg overflow-hidden mb-10 dark:bg-slate-800"
+            >
+              <img
+                src="src/img/blog/singaporee.jpg"
+                alt="bruh"
+                class="w-full"
+              />
               <div class="py-8 px-6">
                 <h3>
                   <a
                     href="#"
-                    class="block mb-3 font-semibold text-xl text-dark hover:text-primary truncate"
-                    >Menikmati Secangkir Kopi</a
+                    class="block mb-3 font-semibold text-xl text-dark hover:text-primary truncate dark:text-white dark:hover:text-primary transition duration-500"
+                    >HOTEL HIJAU IKON SINGAPURA</a
                   >
                 </h3>
                 <p class="font-medium text-secondary text-base mb-6">
-                  Lorem ipsum, dolor sit amet consectetur adipisicing elit.
-                  Dolores beatae quae deserunt ea error quis!
+                  Pernah nggak di Singapura lewat sebuah hotel yang gedungnya
+                  penuh dengan taman hijau? Itu adalah Hotel PARKROYAL
+                  COLLECTION Pickering lho! Saya sering lewat hotel itu sambil
+                  ternganga-nganga liat eksteriornya, akhirnya liburan Lebaran..
                 </p>
                 <a
                   href="#"
-                  class="font-medium text-sm text-white bg-primary py-2 px-4 rounded-lg hover:opacity-80"
+                  class="font-medium text-sm text-white bg-primary py-2 px-4 rounded-lg hover:opacity-80 transition duration-500"
                   >Baca Selengkapnya</a
                 >
               </div>
@@ -514,19 +594,18 @@
     <!-- Blog Section End -->
 
     <!-- Contact Section Start -->
-    <section id="contact" class="pt-36 pb-32">
+    <section id="contact" class="pt-36 pb-32 dark:bg-slate-800">
       <div class="container">
         <div class="w-full px-4">
           <div class="max-w-xl mx-auto text-center mb-16">
             <h4 class="font-semibold text-lg text-primary mb-2">Contact</h4>
             <h2
-              class="font-bold text-dark text-3xl mb-4 sm:text-4xl lg:text-5xl"
+              class="font-bold text-dark text-3xl mb-4 sm:text-4xl lg:text-5xl dark:text-white"
             >
-              Hubungi Kami
+              Hubungi Saya
             </h2>
             <p class="font-medium text-md text-secondary md:text-lg">
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Possimus,
-              nobis!
+              Anda dapat menghubungi saya dengan mengisi kolom dibawah
             </p>
           </div>
           <form>
@@ -580,11 +659,11 @@
       <div class="container">
         <div class="flex flex-wrap">
           <div class="w-full px-4 mb-12 text-slate-300 font-medium md:w-1/3">
-            <h2 class="font-bold text-4xl text-white mb-5">WPU</h2>
-            <h3 class="font-bold text-2xl mb-2">Hubungi Kami</h3>
-            <p>maxut@gmail.com</p>
-            <p>Jl. Jend. Sudirman No.</p>
-            <p>Jakarta</p>
+            <h2 class="font-bold text-4xl text-white mb-5">Maxut</h2>
+            <h3 class="font-bold text-2xl mb-2">Hubungi Saya</h3>
+            <p>maxazur33@gmail.com</p>
+            <p>Jl. Jend. Sudirman No. 99</p>
+            <p>Tangerang</p>
           </div>
 
           <div class="w-full px-4 mb-12 md:w-1/3">
@@ -595,21 +674,21 @@
               <li>
                 <a
                   href="#"
-                  class="inline-block text-base text-secondary hover:text-primary mb-3"
+                  class="inline-block text-base text-secondary hover:text-primary mb-3 transition duration-500"
                   >Programming</a
                 >
               </li>
               <li>
                 <a
                   href="#"
-                  class="inline-block text-base text-secondary hover:text-primary mb-3"
+                  class="inline-block text-base text-secondary hover:text-primary mb-3 transition duration-500"
                   >Teknologi</a
                 >
               </li>
               <li>
                 <a
                   href="#"
-                  class="inline-block text-base text-secondary hover:text-primary mb-3"
+                  class="inline-block text-base text-secondary hover:text-primary mb-3 transition duration-500"
                   >Gaya Hidup</a
                 >
               </li>
@@ -621,42 +700,42 @@
               <li>
                 <a
                   href="#home"
-                  class="inline-block text-base text-secondary hover:text-primary mb-3"
+                  class="inline-block text-base text-secondary hover:text-primary mb-3 transition duration-500"
                   >Beranda</a
                 >
               </li>
               <li>
                 <a
                   href="#about"
-                  class="inline-block text-base text-secondary hover:text-primary mb-3"
+                  class="inline-block text-base text-secondary hover:text-primary mb-3 transition duration-500"
                   >Tentang Saya</a
                 >
               </li>
               <li>
                 <a
                   href="#portfolio"
-                  class="inline-block text-base text-secondary hover:text-primary mb-3"
+                  class="inline-block text-base text-secondary hover:text-primary mb-3 transition duration-500"
                   >Portfolio</a
                 >
               </li>
               <li>
                 <a
                   href="#clients"
-                  class="inline-block text-base text-secondary hover:text-primary mb-3"
+                  class="inline-block text-base text-secondary hover:text-primary mb-3 transition duration-500"
                   >Clients</a
                 >
               </li>
               <li>
                 <a
                   href="#blog"
-                  class="inline-block text-base text-secondary hover:text-primary mb-3"
+                  class="inline-block text-base text-secondary hover:text-primary mb-3 transition duration-500"
                   >Blog</a
                 >
               </li>
               <li>
                 <a
                   href="#contact"
-                  class="inline-block text-base text-secondary hover:text-primary mb-3"
+                  class="inline-block text-base text-secondary hover:text-primary mb-3 transition duration-500"
                   >Contact</a
                 >
               </li>
@@ -668,9 +747,9 @@
           <div class="flex items-center justify-center mb-5">
             <!-- youtube -->
             <a
-              href="https://youtube.com/Box404"
+              href="https://youtube.com/@zexzor44"
               target="_blank"
-              class="w-9 h-9 mr-3 rounded-full flex justify-center items-center border border-slate-300 text-slate-300 hover:border-primary hover:bg-primary hover:text-white"
+              class="w-9 h-9 mr-3 rounded-full flex justify-center items-center border border-slate-300 text-slate-300 hover:border-primary hover:bg-primary hover:text-white transition duration-500"
             >
               <svg
                 role="img"
@@ -689,7 +768,7 @@
             <a
               href="https://instagram.com/zexzor._"
               target="_blank"
-              class="w-9 h-9 mr-3 rounded-full flex justify-center items-center border border-slate-300 text-slate-300 hover:border-primary hover:bg-primary hover:text-white"
+              class="w-9 h-9 mr-3 rounded-full flex justify-center items-center border border-slate-300 text-slate-300 hover:border-primary hover:bg-primary hover:text-white transition duration-500"
             >
               <svg
                 role="img"
@@ -706,9 +785,9 @@
             </a>
             <!-- Twitter -->
             <a
-              href="https://twitter.com/@Yantooh01"
+              href="https://twitter.com/@ShyCloudzz
               target="_blank"
-              class="w-9 h-9 mr-3 rounded-full flex justify-center items-center border border-slate-300 text-slate-300 hover:border-primary hover:bg-primary hover:text-white"
+              class="w-9 h-9 mr-3 rounded-full flex justify-center items-center border border-slate-300 text-slate-300 hover:border-primary hover:bg-primary hover:text-white transition duration-500"
             >
               <svg
                 role="img"
@@ -725,9 +804,9 @@
             </a>
             <!-- TikTok -->
             <a
-              href="https://twitter.com/Yantooh01"
+              href="https://tiktok.com/@secrezto"
               target="_blank"
-              class="w-9 h-9 mr-3 rounded-full flex justify-center items-center border border-slate-300 text-slate-300 hover:border-primary hover:bg-primary hover:text-white"
+              class="w-9 h-9 mr-3 rounded-full flex justify-center items-center border border-slate-300 text-slate-300 hover:border-primary hover:bg-primary hover:text-white transition duration-500"
             >
               <svg
                 role="img"
@@ -744,9 +823,9 @@
             </a>
             <!-- Github -->
             <a
-              href="https://github.com/MaxuT"
+              href="https://github.com/MaxAzur"
               target="_blank"
-              class="w-9 h-9 mr-3 rounded-full flex justify-center items-center border border-slate-300 text-slate-300 hover:border-primary hover:bg-primary hover:text-white"
+              class="w-9 h-9 mr-3 rounded-full flex justify-center items-center border border-slate-300 text-slate-300 hover:border-primary hover:bg-primary hover:text-white transition duration-500"
             >
               <svg
                 role="img"
@@ -768,7 +847,7 @@
               href="https://instagram.com/zexzor._"
               target="_blank"
               class="font-bold text-primary"
-              >Raffi Pratama</a
+              >Maxut</a
             >, menggunakan
             <a
               href="https://tailwindcss.com"
@@ -781,6 +860,16 @@
       </div>
     </footer>
     <!-- Footer Section End -->
+
+    <!-- Back to top start -->
+    <a
+      href="#home"
+      class="hidden h-10 w-10 bg-primary rounded-full fixed z-[9999] bottom-4 right-4 p-4 justify-center items-center hover:animate-pulse"
+      id="to-top"
+    >
+      <span class="block w-2 h-2 border-t-2 border-l-2 rotate-45 mt-2"></span>
+    </a>
+    <!-- Back to top end -->
 
     <script src="dist/js/script.js"></script>
   </body>
